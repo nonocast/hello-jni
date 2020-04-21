@@ -45,6 +45,11 @@ public class App {
     - Mac OSX: gcc
     - Android: gcc通过NDK做交叉编译
     
+
+注: 是不是随便写一个native lib都可以通过loadLibrary调用? 答案肯定不是的, 只有符合JNI规范的native lib才可以, 那什么是符合JNI规范呢? 
+- 满足JNI的函数声明要求, 所以需要`include <jni.h>`
+- 满足JNI的参数要求, env, jclass
+只有这样才能在实现互操作, 所以JNI更多的是一个协议层面的概念。
     
 
 
