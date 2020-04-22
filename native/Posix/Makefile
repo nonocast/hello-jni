@@ -31,7 +31,7 @@ $(BUILD_DIR):
 	$(MKDIR) -p $@
 
 $(BUILD_DIR)/$(LIBRARY_NAME_POSIX): hello.c
-	$(COMPILE) $(INCLUDES) $(CFLAG) $(LDFLAGS) $^ -o $@
+	$(COMPILE) $(INCLUDES) $(CFLAG) $(LDFLAGS) -z noexecstack $^ -o $@
 
 $(BUILD_DIR)/$(LIBRARY_NAME_APPLE): hello.c
 	$(COMPILE) $(INCLUDES) $(CFLAG) $(LDFLAGS) $^ -o $@
